@@ -1,0 +1,46 @@
+#container #images{
+    position : relative;
+    width : 100%;
+    height : 100%;
+    width : 200px;
+    height : 300px;
+    border-radius: 10px ;
+    overflow: hidden;
+    transform: rotateZ(50deg);
+    background-image:url(/home/nasser/Private/1.jpg) ;
+    background-position: center;
+    background-size: cover;
+    transition: 500ms;
+    cursor: pointer;
+    transform: skew(18deg);
+    
+}
+#container #images:hover{
+    transform : skew(0deg);
+    transform : scale(1.5);
+    z-index: 3;
+
+}
+
+#container #images::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;height: 100%;
+    background-color: #101a3127;
+    backdrop-filter: blur(2px);
+    transition: 500ms;
+}
+#container #images:hover::after{
+    backdrop-filter : blur(0);
+    background : transparent;
+}
+#container #images:nth-child(2){
+    background-image : url(/home/nasser/Private/2.jpg);
+
+}
+#container #images:nth-child(3){
+    background-image : url(/home/nasser/Private/3.jpg);
+
+}
