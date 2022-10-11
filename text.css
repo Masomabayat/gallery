@@ -1,28 +1,46 @@
-#container #images{
+h1{
+    text-align: center;
+    border-style:solid;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    border-style: double;
+
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+#container .images{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     position : relative;
-    width : 100%;
-    height : 100%;
+    margin: 20px auto;
     width : 200px;
     height : 300px;
     border-radius: 10px ;
     overflow: hidden;
     transform: rotateZ(50deg);
-    background-image:url(/home/nasser/Private/1.jpg) ;
     background-position: center;
     background-size: cover;
     transition: 500ms;
     cursor: pointer;
     transform: skew(18deg);
-    
 }
-#container #images:hover{
+#container .images:hover{
     transform : skew(0deg);
     transform : scale(1.5);
-    z-index: 3;
+    z-index: 4;
 
 }
 
-#container #images::after{
+#container .images::after{
     content: '';
     position: absolute;
     left: 0;
@@ -32,15 +50,17 @@
     backdrop-filter: blur(2px);
     transition: 500ms;
 }
-#container #images:hover::after{
+@media only screen and (max-device-width: 960px) {
+    .grid-container {
+        grid-template-columns: auto auto auto !important;
+    }
+}
+@media only screen and (max-device-width: 480px) {
+    .grid-container {
+        grid-template-columns: auto auto !important;
+    }       
+}
+#container .images:hover::after{
     backdrop-filter : blur(0);
     background : transparent;
-}
-#container #images:nth-child(2){
-    background-image : url(/home/nasser/Private/2.jpg);
-
-}
-#container #images:nth-child(3){
-    background-image : url(/home/nasser/Private/3.jpg);
-
 }
